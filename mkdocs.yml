@@ -1,0 +1,5 @@
+site_name: Joy's Notebook
+nav:
+  - Home: index.md
+  - About: about.md
+theme: readthedocs
