@@ -1,6 +1,26 @@
 site_name: Joy's Notebook
 nav:
   - Home: index.md
-  - About: about.md
+  - R: r.md
+  - Python: python.md
+  - SQL: sql.md
+  - About me: about.md
 theme: 
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - content.code.annotate
+  hide:
+    - navigation
+    - toc
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
