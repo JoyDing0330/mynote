@@ -59,6 +59,12 @@ df = df[~df.group.isin(["A","B","D"])]
 df = df[df.group.isin(["A","B","D"])==False]
 ```
 
+#### Filter the max value
+
+``` py
+df=df.loc[df['count'] == df['count'].max()]
+```
+
 #### `loc`
 
 ``` py title='return the row as a Series'
@@ -77,6 +83,9 @@ df.loc[:, 'C':'E']
 
 #### `iloc`
 
+```py
+df.iloc[N-1]['salary'] # ???
+```
 
 ### Data Cleaning
 
@@ -198,6 +207,72 @@ df['bonus'] = df.apply(
 df['id']=df.reset_index(drop=True).index+1
 ```
 
+### Aggregate and statistical analysis
+
+#### Aggregate and count occurance
+
+```py
+# method 1
+df.groupby('Company Name', as_index=False).agg(MySum=('Amount', 'sum'), MyCount=('Amount', 'count'))
+
+# method 2
+df.groupby(['name'], as_index=False).agg({'value': 'sum', 'otherstuff': 'first'})
+```
+
+#### Aggregate and count distinct
+
+```py
+df = daily_sales.groupby(['date_id','make_name'], as_index=False).agg(
+    unique_leads=('lead_id', lambda x: x.nunique()),
+    unique_partners=('partner_id', lambda x: x.nunique())
+    )
+```
+
+#### Aggregate and get max (include ties)
+
+```py
+# Create dummy date
+df = pd.DataFrame({
+    'col1': ['A', 'A', 'A', 'A', 'A', 'B', 'B', 'B', 'B', 'B', 'B', 'C', 'C', 'C', 'C', 'C'],
+    'col2': ['AX', 'AX', 'AY', 'AY', 'AY', 'BX', 'BX', 'BX', 'BY', 'BY', 'BY', 'CX', 'CX', 'CX', 'CX', 'CX'],
+})
+
+# Get Max Value by Group with Ties
+df_count = df.groupby('col1', as_index=0)['col2'].value_counts()
+max_index = df_count.groupby(['col1'])['count'].transform(max) == df_count['count']
+df1 = df_count[max_index]
+```
+
+#### Aggregate and get max (ignore ties)
+
+```py
+
+# method 1
+df=df.loc[df.groupby(["departmentId", "Department"])["Salary"].idxmax()]
+
+# method 2
+df1 = (df
+ .groupby('col1')['col2']
+ .value_counts()
+ .groupby(level=0)
+ .head(1))
+```
+
+#### Aggregate and concatenate
+
+```py
+# method 1: using list and rename at the same time
+df = activities.groupby(['sell_date'], as_index=False).agg(
+    num_sold=('product', 'count'),
+    products=('product', lambda x: ','.join(x))
+    )
+
+# method 2: using dict
+df = activities.groupby(['sell_date'], as_index=False).agg(
+    {'product': ['count', lambda x: ','.join(x)]}
+    )
+```
+
 ### Table Reshaping
 
 #### Concatenate data
@@ -208,10 +283,18 @@ df = pd.concat(
     )
 ```
 
-#### Merge data to create a complete dataframe
+#### Merge data
 ``` py
-df = students.merge(subjects, how='cross')
+df = students.merge(subjects, how='cross') # (1)
+df = pd.merge(employee, department, how="left", on='departmentId') # ???
 ```
+
+1.  - left: use only keys from left frame, similar to a SQL left outer join; preserve key order.
+    - right: use only keys from right frame, similar to a SQL right outer join; preserve key order.
+    - outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically.
+    - inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys.
+    - cross: creates the cartesian product from both frames, preserves the order of the left keys.
+
 
 #### Pivot: long to wide
 ``` py
@@ -250,5 +333,23 @@ pattern = r'^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode\.com$'
 # Filter valid emails
 df = users[users['mail'].str.match(pattern, na=False)]
 ```
+
+```py title='str.capitalize'
+    users['name']=users['name'].str.capitalize()`  # (1)
+```
+
+1.  - `Series.str.lower`: Converts all characters to lowercase.
+    - `Series.str.upper`: Converts all characters to uppercase.
+    - `Series.str.title`: Converts first character of each word to uppercase and remaining to lowercase.
+    - `Series.str.capitalize`: Converts first character to uppercase and remaining to lowercase.
+    - `Series.str.swapcase`: Converts uppercase to lowercase and lowercase to uppercase.
+    - `Series.str.casefold`: Removes all case distinctions in the string.
+
+```py title='start with'
+df['employee_name'].startswith('M')
+```
+
+## Formatted String Literals
+
 
 ## OOP
