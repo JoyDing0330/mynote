@@ -1,4 +1,6 @@
 site_name: Joy's Notebook
+site_description: >-
+  This is my coding notebook.
 nav:
   - Home: index.md
   - R: r.md
@@ -7,6 +9,7 @@ nav:
   - About me: about.md
 theme: 
   name: material
+  custom_dir: material/overrides
   features:
     - navigation.tabs
     - navigation.sections
