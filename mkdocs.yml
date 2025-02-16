@@ -1,6 +1,8 @@
 site_name: Joy's Notebook
 site_description: >-
   This is my coding notebook.
+
+# Page tree
 nav:
   - Home: index.md
   - R: r.md
@@ -18,6 +20,8 @@ nav:
       - Python/OOP/decorator.md
   - SQL: sql.md
   - About me: about.md
+
+# Configuration
 theme: 
   name: material
   custom_dir: material/overrides
@@ -30,6 +34,8 @@ theme:
     - content.code.annotate
   hide:
     - navigation
+
+# Extensions
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -40,3 +46,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  # grid cards
+  - attr_list
+  - md_in_html
+  # icon
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
