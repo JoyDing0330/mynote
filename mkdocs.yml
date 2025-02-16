@@ -4,7 +4,18 @@ site_description: >-
 nav:
   - Home: index.md
   - R: r.md
-  - Python: python.md
+  - Python:
+    - Python/index.md
+    - Pandas and Numpy:
+      - Python/Pandas_numpy/read_write_data.md
+      - Python/Pandas_numpy/data_inspection.md
+      - Python/Pandas_numpy/data_cleaning.md
+      - Python/Pandas_numpy/data_selecting.md
+      - Python/Pandas_numpy/table_reshaping.md
+      - Python/Pandas_numpy/data_aggregation.md
+      - Python/Pandas_numpy/string_manipulation.md
+    - OOP:
+      - Python/OOP/decorator.md
   - SQL: sql.md
   - About me: about.md
 theme: 
@@ -13,17 +24,19 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - toc.integrate
+    - navigation.indexes
     - navigation.top
+    - navigation.path
     - content.code.annotate
   hide:
     - navigation
-    - toc
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - toc:
+      permalink: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
