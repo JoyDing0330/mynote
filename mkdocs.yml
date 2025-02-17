@@ -5,16 +5,6 @@ site_description: >-
 # Page tree
 nav:
   - Home: index.md
-  - R:
-    - R/index.md
-    - Data Analysis:
-      - R/data_analysis/r_data_analysis.md
-    - Automation:
-      - R/automation/r_automation.md
-    - Officer:
-      - R/officer/r_officer.md
-    - Shiny:
-      - R/shiny/r_shiny.md
   - Python:
     - python/index.md
     - Pandas and Numpy:
@@ -27,6 +17,16 @@ nav:
       - python/pandas_numpy/string_manipulation.md
     - OOP:
       - python/oop/decorator.md
+  - R:
+    - R/index.md
+    - Data Analysis:
+      - R/data_analysis/r_data_analysis.md
+    - Automation:
+      - R/automation/r_automation.md
+    - Officer:
+      - R/officer/r_officer.md
+    - Shiny:
+      - R/shiny/r_shiny.md
   - SQL: sql.md
   - Git: git.md
   - About me: about.md
