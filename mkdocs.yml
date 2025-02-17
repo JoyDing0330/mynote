@@ -16,17 +16,17 @@ nav:
     - Shiny:
       - R/shiny/r_shiny.md
   - Python:
-    - Python/index.md
+    - python/index.md
     - Pandas and Numpy:
-      - Python/pandas_numpy/read_and_write_data.md
-      - Python/pandas_numpy/data_inspection.md
-      - Python/pandas_numpy/data_cleaning.md
-      - Python/pandas_numpy/data_selecting.md
-      - Python/pandas_numpy/table_reshaping.md
-      - Python/pandas_numpy/data_aggregation.md
-      - Python/pandas_numpy/string_manipulation.md
+      - python/pandas_numpy/read_and_write_data.md
+      - python/pandas_numpy/data_inspection.md
+      - python/pandas_numpy/data_cleaning.md
+      - python/pandas_numpy/data_selecting.md
+      - python/pandas_numpy/table_reshaping.md
+      - python/pandas_numpy/data_aggregation.md
+      - python/pandas_numpy/string_manipulation.md
     - OOP:
-      - Python/oop/decorator.md
+      - python/oop/decorator.md
   - SQL: sql.md
   - Git: git.md
   - About me: about.md
