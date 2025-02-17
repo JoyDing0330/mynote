@@ -22,12 +22,12 @@
 
 </div> 
 
-  [Read and write data]: Pandas_numpy/read_write_data.md
-  [Data inspection]: Pandas_numpy/data_inspection.md
-  [Data cleaning]: Pandas_numpy/data_cleaning.md
-  [Data selecting]: Pandas_numpy/data_selecting.md
-  [Data aggregation]: Pandas_numpy/data_aggregation.md
-  [Table reshaping]: Pandas_numpy/table_reshaping.md
-  [Language]: Pandas_numpy/data_aggregation.md
+  [Read and write data]: pandas_numpy/read_write_data.md
+  [Data inspection]: pandas_numpy/data_inspection.md
+  [Data cleaning]: pandas_numpy/data_cleaning.md
+  [Data selecting]: pandas_numpy/data_selecting.md
+  [Data aggregation]: pandas_numpy/data_aggregation.md
+  [Table reshaping]: pandas_numpy/table_reshaping.md
+  [Language]: pandas_numpy/data_aggregation.md
 
 ## Object Oriented Programing

@@ -5,19 +5,28 @@ site_description: >-
 # Page tree
 nav:
   - Home: index.md
-  - R: r.md
+  - R:
+    - R/index.md
+    - Data Analysis:
+      - R/data_analysis/r_data_analysis.md
+    - Automation:
+      - R/automation/r_automation.md
+    - Officer:
+      - R/officer/r_officer.md
+    - Shiny:
+      - R/shiny/r_shiny.md
   - Python:
     - Python/index.md
     - Pandas and Numpy:
-      - Python/Pandas_numpy/read_write_data.md
-      - Python/Pandas_numpy/data_inspection.md
-      - Python/Pandas_numpy/data_cleaning.md
-      - Python/Pandas_numpy/data_selecting.md
-      - Python/Pandas_numpy/table_reshaping.md
-      - Python/Pandas_numpy/data_aggregation.md
-      - Python/Pandas_numpy/string_manipulation.md
+      - Python/pandas_numpy/read_write_data.md
+      - Python/pandas_numpy/data_inspection.md
+      - Python/pandas_numpy/data_cleaning.md
+      - Python/pandas_numpy/data_selecting.md
+      - Python/pandas_numpy/table_reshaping.md
+      - Python/pandas_numpy/data_aggregation.md
+      - Python/pandas_numpy/string_manipulation.md
     - OOP:
-      - Python/OOP/decorator.md
+      - Python/oop/decorator.md
   - SQL: sql.md
   - Git: git.md
   - About me: about.md
