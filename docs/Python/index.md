@@ -22,7 +22,7 @@
 
 </div> 
 
-  [Read and write data]: pandas_numpy/read_write_data.md
+  [Read and write data]: pandas_numpy/read_and_write_data.md
   [Data inspection]: pandas_numpy/data_inspection.md
   [Data cleaning]: pandas_numpy/data_cleaning.md
   [Data selecting]: pandas_numpy/data_selecting.md

@@ -18,7 +18,7 @@ nav:
   - Python:
     - Python/index.md
     - Pandas and Numpy:
-      - Python/pandas_numpy/read_write_data.md
+      - Python/pandas_numpy/read_and_write_data.md
       - Python/pandas_numpy/data_inspection.md
       - Python/pandas_numpy/data_cleaning.md
       - Python/pandas_numpy/data_selecting.md
