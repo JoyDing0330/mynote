@@ -34,7 +34,8 @@ theme:
     - content.code.annotate
   hide:
     - navigation
-  favicon: assets/images/favicon1.jpg
+  favicon: assets/images/white_grey.png
+  logo: assets/images/white.png
 
 # Extensions
 markdown_extensions:
