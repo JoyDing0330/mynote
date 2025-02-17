@@ -8,7 +8,7 @@ df.groupby('Company Name', as_index=False).agg(MySum=('Amount', 'sum'), MyCount=
 df.groupby(['name'], as_index=False).agg({'value': 'sum', 'otherstuff': 'first'})
 ```
 
-#### Aggregate and count distinct
+### Aggregate and count distinct
 
 ```py
 df = daily_sales.groupby(['date_id','make_name'], as_index=False).agg(

@@ -19,6 +19,7 @@ nav:
     - OOP:
       - Python/OOP/decorator.md
   - SQL: sql.md
+  - Git: git.md
   - About me: about.md
 
 # Configuration
@@ -34,8 +35,8 @@ theme:
     - content.code.annotate
   hide:
     - navigation
-  favicon: assets/images/white_grey.png
-  logo: assets/images/white.png
+  favicon: assets/images/grey.png
+  logo: assets/images/white_trans.png
 
 # Extensions
 markdown_extensions:
