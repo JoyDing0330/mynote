@@ -42,6 +42,7 @@ theme:
     - navigation.top
     - navigation.path
     - content.code.annotate
+    - navigation.footer
   hide:
     - navigation
   favicon: assets/images/grey.png
@@ -65,3 +66,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  # footnote
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/joy-yue-ding/
+    - icon: fontawesome/brands/github
+      link: https://github.com/JoyDing0330
