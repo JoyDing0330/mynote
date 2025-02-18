@@ -19,6 +19,9 @@ nav:
       - python/oop/decorator.md
   - R:
     - R/index.md
+    - R/some_tips.md
+    - R/base_r.md
+    - R/strings.md
     - Data Analysis:
       - R/data_analysis/r_data_analysis.md
     - Automation:
