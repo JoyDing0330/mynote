@@ -4,7 +4,7 @@
 * Preferences: Open User Settings (JSON)
 * Add the following lines to the settings file:
 ```json
-    {
+{
     "python.formatting.provider": "black",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
