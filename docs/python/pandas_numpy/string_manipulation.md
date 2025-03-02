@@ -17,7 +17,7 @@ df = users[users['mail'].str.match(pattern, na=False)]
 ```
 
 ```py title='str.capitalize'
-    users['name']=users['name'].str.capitalize()`  # (1)
+users['name'] = users['name'].str.capitalize()`  # (1)
 ```
 
 1.  - `Series.str.lower`: Converts all characters to lowercase.

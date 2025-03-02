@@ -6,6 +6,14 @@ df.query('col1 <= 1 & 1 <= col1')
 ```
 
 ### Filter by conditions
+```python title='query'
+result = df.query('column > value and other_column < other_value')
+df = df.query('date.isnull()')
+```
+
+```python title='lambda'
+df = df.loc[lambda x: (x.cola != "YES") & (x.colb != "YES")]
+```
 
 ```py title='Filter by multiple conditions'
  df = df.loc[(df['area'] >= 3000000)|(df['population'] >= 25000000)]
@@ -30,7 +38,7 @@ df = df[df.group.isin(["A","B","D"])==False]
 df=df.loc[df['count'] == df['count'].max()]
 ```
 
-### `loc`
+### loc
 
 ``` py title='return the row as a Series'
 df.loc['viper']
@@ -46,7 +54,7 @@ df.loc['row', 'col']
 df.loc[:, 'C':'E']
 ```
 
-### `iloc`
+### iloc
 
 ```py
 df.iloc[N-1]['salary'] # ???

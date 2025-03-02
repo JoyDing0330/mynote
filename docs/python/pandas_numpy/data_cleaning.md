@@ -5,6 +5,14 @@
 df['grade'] = df['grade'].astype(int)
 ```
 
+```python
+df = df.astype({
+    'A': 'int64',
+    'B': 'float64',
+    'C': 'datetime64[ns]'
+})
+```
+
 ### Drop duplicate rows
 
 ```py
@@ -80,6 +88,13 @@ How to rank the group of records that have the same value (i.e. ties):
     - top: assign lowest rank to NaN values
     - bottom: assign highest rank to NaN values
 
+```python title='compute rank'
+df.assign(
+    rank=lambda x: x["date"].rank(method="first")
+    )
+
+```
+
 ```py title='create new column based on condition'
 df['level'] = np.where((df['value1'] >= 4) & (df['value2'] >= 10), 'High', 'Low')
 ```
@@ -109,6 +124,37 @@ df['bonus'] = df.apply(
     axis=1
     )
 
+```
+
+```py title='calculate date difference between two date columns'
+df.assign(
+  new_col=lambda x: (
+    x.date1 - x.date2
+  ).dt.days
+)
+```
+
+```py title='calculate the # of days delay between each confirmed cases'
+df.assign(
+  day_lag=lambda x: (
+    x.groupby(["cola", "colb"], as_index=False)[
+      "date"
+    ]
+    .diff() # date difference
+    .shift(-1) # move ahead
+    .dt.days # convert into integer
+  )
+)
+```
+
+```py title='assign value based on condition'
+df.assign(
+  value=lambda x: np.where(x.ID == 12345, "10", "20")
+)
+```
+
+```py title='dynamically set the column name using variable values'
+df.assign(**{column:lambda x: (x[column].str.upper().str.strip())})
 ```
 
 ### Reset index

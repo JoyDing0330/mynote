@@ -1,6 +1,6 @@
 ### Check basic information
 prints information about a DataFrame including the index dtype and columns, non-null values and memory usage.
-``` py
+``` python
 df.info()
 ```
 
@@ -12,20 +12,29 @@ df.describe()
 ```
 
 ### check the dimensions of dataframe
-``` py
+``` python
 df.shape
 ```
 
 ### CHeck the column name of dataframe
 
-```py
+```python
 df.column
 ```
 
 ### Show data heads and tails
 
-``` py
+``` python
 df.head()
 df.tail()
 ```
-
+### print formated table
+```python
+print(
+    tabulate(
+        df,
+        headers="keys",
+        tablefmt="psql",
+    )
+)
+```

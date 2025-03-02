@@ -9,8 +9,12 @@ df = pd.concat(
 
 ### Merge data
 ``` py
-df = students.merge(subjects, how='cross') # (1)
-df = pd.merge(employee, department, how="left", on='departmentId') # ???
+df1.merge(
+  df2,
+  how="right", # (1)
+  on=["cola", "colb"],
+  suffixes=("_all", "_roommate")
+)
 ```
 
 1.  - left: use only keys from left frame, similar to a SQL left outer join; preserve key order.
@@ -37,4 +41,27 @@ report1 = pd.melt(
     var_name='quarter',
     value_name='sales'
     )
+```
+
+### Split
+```py title='split a dataframe into a list by a column value'
+# create a demo data
+data = {
+    'Category': ['A', 'B', 'A', 'B', 'C', 'A', 'C'],
+    'Value': [10, 20, 30, 40, 50, 60, 70]
+}
+df = pd.DataFrame(data)
+
+# Group by 'Category' and split into a list of DataFrames
+grouped_df = df.groupby('Category')
+list_of_dfs = [group for _, group in grouped_df]
+
+# Display the list of DataFrames
+for i, group_df in enumerate(list_of_dfs):
+    print(f"Group {i+1}:\n{group_df}\n")
+
+# check group keys
+print(grouped_df.groups.keys())
+# get group
+grouped_df.get_group('A')
 ```

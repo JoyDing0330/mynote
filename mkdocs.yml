@@ -7,6 +7,7 @@ nav:
   - Home: index.md
   - Python:
     - python/index.md
+    - python/some_tips_python.md
     - Pandas and Numpy:
       - python/pandas_numpy/read_and_write_data.md
       - python/pandas_numpy/data_inspection.md
