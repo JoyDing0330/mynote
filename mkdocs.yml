@@ -23,6 +23,10 @@ nav:
     - R/some_tips.md
     - R/base_r.md
     - R/strings.md
+    - Packages:
+      - R/packages/dplyr.md
+      - R/packages/purrr.md
+      - R/packages/rlang.md
     - Data Analysis:
       - R/data_analysis/r_data_analysis.md
     - Automation:

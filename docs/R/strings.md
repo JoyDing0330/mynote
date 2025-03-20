@@ -29,17 +29,11 @@ stringr::str_extract_all(
         )
 ```
 
-```r title='Replace the last specific operator'
-sub('-[^-]*$', '', sentence) # substitute the last - with ''(nothing)
-#sub by matching a - followed by zero or more characters that are not a - till the end ($) of the string and replace it with blank ('')
+```r title='substitute the last dash with nothing'
+sub('-[^-]*$', '', sentence) # (1)
 ```
 
-```r title='Extract date value'
-str_extract(
-          string = .x,
-          pattern = "\\d{2}(-/)\\d{2}(-/)\\d{4}"
-        )
-```
+1.  matching a dash followed by zero or more characters that are not a dash till the end ($) of the string and replace it with blank ('')
 
 ## Replace 
 ```r
