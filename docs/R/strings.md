@@ -1,3 +1,25 @@
+## Format numbers
+
+```r
+sprintf("%02.1f%%", your_number) # (1)
+# Output: "xxxx.x%"
+
+sprintf("Pi to 3 decimal places: %.3f", pi)
+# Output: "Pi to 3 decimal places: 3.142"
+
+sprintf("Scientific notation of Pi: %e", pi) # (2)
+# Output: "Scientific notation of Pi: 3.141593e+00"
+
+sprintf("%s is %d years old", "Alice", 25) # (3)
+# Output: "Alice is 25 years old"
+```
+
+1.  * %%: Literal %
+    * %f: Double precision value in fixed-point notation
+2.  %e, %E: Double precision value in exponential notation
+3.  * %d, %i: Integer value
+    * %s: Character string
+
 ## Regular expression
 
 ```r title='Extract anything between certain words'
