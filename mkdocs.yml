@@ -26,6 +26,7 @@ nav:
     - Packages:
       - R/packages/dplyr.md
       - R/packages/purrr.md
+      - R/packages/furrr.md
       - R/packages/rlang.md
     - Data Analysis:
       - R/data_analysis/r_data_analysis.md

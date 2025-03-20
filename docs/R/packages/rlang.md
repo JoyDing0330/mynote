@@ -1,13 +1,37 @@
 ## Tidy dots features
 ```r
-my_cases <-   rlang::quos(Species == "setosa" ~ "S", 
-                    TRUE ~ "other")
+my_cases <-   rlang::quos(
+    Species == "setosa" ~ "S", 
+    TRUE ~ "other"
+    )
 
 out <-  tiris %>% 
             mutate(new_lable = case_when(!!! my_cases))
 ```
 
-## Create a new environment
+## `curly-curly()`: abstracts quote-and-unquote into a single interpolation step
+
+```r title='quote and unquote version'
+max_by <- function(data, var, by) {
+  data %>%
+    group_by(!!enquo(by)) %>%
+    summarise(maximum = max(!!enquo(var), na.rm = TRUE))
+}
+
+starwars %>% max_by(mass, by = gender)
+```
+
+```r title='curly-curly version'
+max_by <- function(data, var, by) {
+  data %>%
+    group_by({{ by }}) %>%
+    summarise(maximum = max({{ var }}, na.rm = TRUE))
+}
+
+starwars %>% max_by(var = height, by = gender)
+```
+
+## `env()`: Create a new environment
 
 ```r
 e1 <- rlang::env(a = 1, b = 2, c = 3)
@@ -26,7 +50,7 @@ env <- env(!!var := "A")
 env$a
 ```
 
-## Execute functions
+## `exec()`: Execute functions
 ```r
 exec("mean", x = 1:10, na.rm = TRUE, trim = 0.1)
 ```
@@ -41,3 +65,4 @@ arg_name <- "na.rm"
 arg_val <- TRUE
 exec("mean", 1:10, !!arg_name := arg_val)
 ```
+
