@@ -53,9 +53,11 @@ gitGraph
 ```python
 git branch
 git branch -v # (1)
+git branch -a # (2)
 ```
 
 1.  To see the last commit on each branch
+2.  To see all branch including remote branches (remote branches are in red)
 
 ### Changing a branch name
 ```python

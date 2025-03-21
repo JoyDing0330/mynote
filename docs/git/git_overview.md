@@ -119,36 +119,6 @@ git push remote_name local_branch:remote_branch
 git push origin --delete serverfix
 ```
 
-## `git branch`
-
-``` git title='Print branch list'
-git branch --list
-```
-
-``` git title='Create new branch feature1'
-git branch feature1
-```
-
-``` git title='Change the tracked upstream branch '
-git branch -u origin/serverfix
-git branch --set-upstream-to origin/serverfix
-```
-``` git title='Delete branch'
-git branch -d feature1
-```
-
-``` git title='See the last commit for each branch'
-git branch -v
-```
-
-``` git title='See local branch and [tracked remote branch] and the last commit record'
-git branch -vv
-```
-
-``` git title='See all branch (remote branch is in red)'
-git branch -a
-```
-
 ## `git checkout`
 
 ``` git title='Change to feature1 branch'
@@ -176,32 +146,6 @@ fit fetch origin master:refs/remotes/origin/mymaster \ topic:refs/remotes/origin
 ``` git title='Fetch all of the tracked branches'
 git fetch --all
 ```
-
-## `git merge`
-
-``` git title='Merge feature1 to main branches'
-git checkout main
-git merge feature1
-```
-
-```mermaid
-%%{init: { 'logLevel': 'debug', 'theme': 'base' } }%%
----
-title: git merge
----
-gitGraph
-   commit
-   commit
-   branch feature1
-   checkout feature1
-   commit
-   commit
-   checkout main
-   merge feature1
-   commit
-   commit
-```
-
 
 ## `git rebase`
 
