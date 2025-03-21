@@ -16,6 +16,7 @@ for(i in 1:10) print(i)
 
 ## Timing utlilties
 ```r title='Timing multiple steps'
+library(tictoc)
 tic("step 1")
 print("Do something...")
 Sys.sleep(1)
