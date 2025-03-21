@@ -102,3 +102,10 @@ git log -- graph
 ```
 
 ## Undoing Things
+
+![git_undoing](../assets/images/git%20-%20Undoing%20Things.png)
+
+## Working with Remotes
+
+### git fetch
+git fetch command only downloads the data to your local repository — it doesn’t automatically merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
