@@ -54,6 +54,7 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.tabs.sticky
     - navigation.path
     - content.code.annotate
     - navigation.footer
