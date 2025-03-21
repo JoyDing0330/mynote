@@ -37,7 +37,12 @@ nav:
     - Shiny:
       - R/shiny/r_shiny.md
   - SQL: sql.md
-  - Git: git.md
+  - Git:
+    - git.md
+    - Git Basics:
+      - git/git_basic/git_basic.md
+    - Git Branching:
+      - git/git_branching/git_branching.md
   - About me: about.md
 
 # Configuration
@@ -59,6 +64,11 @@ theme:
 
 # Extensions
 markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -75,6 +85,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 
 extra:
   # footnote

@@ -1,3 +1,4 @@
+
 ## Configuration
 
 - User name and email configuration
@@ -216,6 +217,25 @@ git fetch --all
 git checkout main
 git merge feature1
 ```
+
+```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'base' } }%%
+---
+title: git merge
+---
+gitGraph
+   commit
+   commit
+   branch feature1
+   checkout feature1
+   commit
+   commit
+   checkout main
+   merge feature1
+   commit
+   commit
+```
+
 
 ## `git rebase`
 
