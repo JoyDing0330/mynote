@@ -7,7 +7,7 @@ git init
 ### Three Status
 1.  Modified: the file has been changed but not committed yet
 2.  Staged: a modified file is marked in its current version to go into your next commit snapshot
-3.  ommitted: the data is safely stored in local database
+3.  Ommitted: the data is safely stored in local database
 
 ### Checking the Status of Your Files
 ```git
