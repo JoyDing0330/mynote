@@ -2,6 +2,13 @@
 
 ![git_flow](../assets/images/git.png)
 
+## Undo Things
+
+![undoing things](../assets/images/git%20-%20Undoing%20Things.png)
+
+## Remote-tracking Branch
+
+![remote tracking branch](../assets/images/git%20-%20Remote-tracking%20branches.png)
 
 ## `git init`
 Initiate local repo
@@ -16,20 +23,6 @@ Track file/add to stage
 ``` git
 git add Git.Rmd
 git add .
-```
-
-## `git rm`
-``` git title='Untrack file'
-git rm Git.Rmd
-```
-
-``` git title='Keep in cache but not track'
-git rm -- cache Git.Rmd
-```
-
-## `git reset`
-``` git title='Remove from stage'
-git reset HEAD Git.Rmd
 ```
 
 ## `git commit`
@@ -97,22 +90,6 @@ git clone <repo> <directory>
 git clone ssh://john@example.com/path/to/my-project.git my-project
 ```
 
-## `git remote`
-``` git title='Remote repository connect'
-git remote add origin https://github.com/JoyDing0330/Rnote.git
-```
-
-``` git title='Check remote repo'
-git remote
-```
-
-``` git title='Obtain more information about the remote repository'
-git remote show origin``
-```
-
-``` git title='Change remote repo name'
-git remote rename old_name new_name
-```
 
 ## `git push`
 

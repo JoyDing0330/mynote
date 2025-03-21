@@ -107,5 +107,55 @@ git log -- graph
 
 ## Working with Remotes
 
-### git fetch
+Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
+
+### Showing Your Remotes
+```python
+git remote # (1)
+git remote -v # (2)
+```
+
+1.  Lists the shortnames of each remote handle you’ve specified
+2.  Shows the URLs that Git has stored for the shortname to be used when reading and writing to that remote
+
+### Adding Remote Repositories
+```python
+git remote add <shortname> <url> # (1)
+```
+
+1.  The short name can be used to replace the full URL e.g. `git fetch pb`
+
+### Fetching and Pulling from Your Remotes
 git fetch command only downloads the data to your local repository — it doesn’t automatically merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
+```git
+git fetch <remote>
+```
+
+If your current branch is set up to track a remote branch , you can use the git pull command to automatically fetch and then merge that remote branch into your current branch.
+```git
+git pull
+```
+
+### Pushing to Your Remotes
+```git
+git push <remote> <branch>
+git push origin master
+```
+
+### Inspecting a Remote
+```git
+git remote show <remote>
+git remote show origin
+```
+
+### Renaming and Removing Remotes
+
+```python title='change a remote’s shortname'
+git remote rename pb paul # (1)
+```
+
+1.  rename pb to paul
+
+```git title='remove'
+git remote remove <remote>
+```
