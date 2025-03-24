@@ -111,4 +111,26 @@ git push origin --delete serverfix # (1)
 
 
 ## Rebasing
+With the rebase command, you can take all the changes that were committed on one branch and replay them on a different branch.
+```python title='check out the experiment branch and then rebase it onto the master branch'
+git checkout experiment # (1)
+git rebase master # (2)
+git checkout master # (3)
+git merge experiment # (4)
+```
 
+1.  check out the experiment branch
+2.  rebase it onto the master branch
+3.  go back to the master branch
+4.  do a fast-forward merge
+
+
+```python title='rebase the server branch onto the master branch without having to check it out first'
+git rebase master server # (1)
+git checkout master # (2)
+git merge server # (3)
+```
+
+1.  `git rebase <basebranch> <topicbranch>`
+2.  go to the master branch
+3.  fast-forward the base branch (master)
