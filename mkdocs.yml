@@ -41,6 +41,7 @@ nav:
     - git/git_overview.md
     - git/git_basic.md
     - git/git_branching.md
+    - git/git_tool.md
     - git/customizing_git.md
   - About me: about.md
 
