@@ -52,10 +52,19 @@ dirname(file.path("","p1","p2","p3","filename"))
 ```
 
 ## `list.files()`
-```r
+```r title='load everything that follows a name pattern'
 here::here('script/funcs') %>% 
   list.files('.R$', full.names = T) %>% 
   walk(source, local = globalenv())
+
+sapply(
+  list.files(
+    here::here('B_script/funcs'),
+    pattern = 'R$',
+    full.names = T
+  ),
+  source
+)
 ```
 
 ```r
@@ -72,12 +81,12 @@ file <- file_path %>%
           name  = basename(path),
           ctime = ctime,
         ) %>% 
-        filter(as_date(ctime) == file_date)
+        filter(as.Date(ctime) == Sys.Date())
 ```
 
 ## `attach()`
-```r
-attach(df, name = 'temp_env')
+```r title='load data into a deparate environment'
+attach(here::here(df_path.RData), name = 'temp_env')
 ```
 
 ## Exit handler: `on.exit()` 

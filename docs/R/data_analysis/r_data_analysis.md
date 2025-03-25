@@ -1,27 +1,33 @@
 ## Deal with NA
-### replace NA to 0
+### replace NA with 0
 ```r
 df %>%
-    map(
+    purrr::map(
         .,
-        ~ mutate(across(everything(), ~ ifelse(is.na(.x), 0, .x)))
+        ~ dplyr::mutate(across(everything(), ~ ifelse(is.na(.x), 0, .x)))
     )
 
 df %>%
-    map(
-        ~ mutate(across(everything(), ~ replace_na(.x, 0)))
+    purrr::map(
+        ~ dplyr::mutate(across(everything(), ~ tidyr::replace_na(.x, 0)))
     )
 
 df %>%
-    mutate_at(
-      vars(count),
-      ~ replace_na(.x, 0)
+  dplyr::mutate_at(
+    dplyr::vars(count),
+      ~ tidyr::replace_na(.x, 0)
+    )
+
+df %>%
+  dplyr::mutate_if(
+    is.numeric,
+    funs(tidyr::replace_na(.,0))
     )
 ```
 
 ### replace all blanks with na
 ```r
-apply(df, function(x) gsub("^$", NA, trimws(x)))
+df %>% apply(2, function(x) gsub("^$", NA, trimws(x)))
 ```
 ### replace 'unknnown' with na
 ```r
@@ -49,6 +55,14 @@ df %>%
   dplyr::ungroup()
 ```
 
+## Deal with date format
+
+```r title='change all columns contain "DATE" as date format'
+dplyr::mutate_at(
+      vars(contains("DATE")),
+      ~ as.Date(.x, format = "%Y-%m-%d")
+      )
+```
 
 ## Select columns
 ```r
@@ -85,7 +99,8 @@ df %>%
   )
 ```
 
-## Pivot data from wide to long
+## Reshape data
+###  Pivot data from wide to long
 
 ```r
 tib <- tibble::tibble(type = c(1L, 1L, 1L, 2L, 2L, 2L), 
@@ -110,3 +125,52 @@ tidyr::pivot_longer(tib,
 3.  Defines the pattern for splitting column names. It looks for:
     * A sequence of lowercase letters ([a-z]+)
     * A sequence of digits (\\d+)
+
+### split date into a list by a column value
+
+```r
+df %>%
+  # split by indicator and set name
+  dplyr::group_split(
+    indicator, # (1)
+    .keep = T  # (2)
+  ) %>%
+  # set names
+  purrr::set_names(
+    purrr::map_chr(
+      ., 
+      ~ .x$indicator[1] # (3)
+      )
+  )
+```
+
+1.  the grouped variable
+2.  `TRUE` if want to keep the grouped variable
+3.  Set the name of data within the list
+
+## Rename columns
+
+### Add suffix for multiple column names
+```r
+dplyr::rename_at(vars(BC:Interior),function(x) paste0(x,"_24"))
+dplyr::rename_at(vars(-class), ~ paste0(., "_2014"))
+```
+
+### Change all column names to title style except those start with hsda
+···r
+df %>% dplyr::rename_with(str_to_title, !starts_with("hsda"))
+···
+
+### Add prefix to columns that start with "nonexistent"
+```r
+rename_with(
+  iris,
+  ~ paste0("prefix_", .x, recycle0 = TRUE),
+  starts_with("nonexistent")
+)
+```
+
+### Rename columns with names ending in "test" to "Test".
+```r
+dplyr::rename_with(df, ~ 'Test', matches('test$'))
+```
