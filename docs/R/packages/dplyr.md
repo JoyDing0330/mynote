@@ -68,3 +68,42 @@ df %>% rename_with(~ 'residential_ha', matches('ha$'))
 ```r
 relocate(df, date_end, .after = date_start)
 ```
+
+## Set options
+### Intersection $A \cap B$
+
+![intersect](../../assets/images/Inner.png){ width="300" }
+
+`intersect(A, B)` finds all rows in both A and B.
+
+`inner_join(A, B)` only keeps observations from xA that have a matching key in B.
+Same with base r: `merge(A, B)`
+
+### Union $A \cup B$
+
+![intersect](../../assets/images/Outer.png){ width="300" }
+
+`union(A, B)` finds all rows in either A or B, excluding duplicates.
+
+`union_all(A, B)` finds all rows in either A or B, including duplicates.
+
+`semi_join(A, B)` returns all rows from x with a match in y.
+Same with base r: `A[A$x %in% B$x, , drop = FALSE]`
+
+`full_join(A, B)` keeps all observations in A and B.
+Same with base r: `merge(A, B, all = TRUE)`
+
+### Set difference $A-B$
+
+![intersect](../../assets/images/Diff_left.png){ width="300" }
+
+`setdiff(A, B)` finds all rows in A that aren't in B.
+
+`anti_join(A, B)` returns all rows from A without a match in B.
+Same with base r: `A[!A$x %in% B$x, , drop = FALSE]`
+
+### Symmetric difference $A \Delta B$
+
+![intersect](../../assets/images/Diff.png){ width="300" }
+
+`symdiff(A, B)` computes the symmetric difference, i.e. all rows in A that aren't in B and all rows in B that aren't in A.
