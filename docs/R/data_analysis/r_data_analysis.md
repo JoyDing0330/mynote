@@ -55,6 +55,11 @@ df %>%
   dplyr::ungroup()
 ```
 
+### Remove columns with all NAs
+```r
+df %>% dplyr::select_if(~ !all(is.na(.)))
+```
+
 ## Deal with date format
 
 ```r title='change all columns contain "DATE" as date format'

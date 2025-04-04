@@ -16,7 +16,7 @@ df.describe()
 df.shape
 ```
 
-### CHeck the column name of dataframe
+### Check the column name of dataframe
 
 ```python
 df.column
@@ -28,6 +28,12 @@ df.column
 df.head()
 df.tail()
 ```
+
+### Show all unique
+```python
+df.column.unique()
+```
+
 ### print formated table
 ```python
 print(
