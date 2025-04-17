@@ -36,6 +36,9 @@ nav:
       - R/officer/r_officer.md
     - Shiny:
       - R/shiny/r_shiny.md
+    - OOP in R:
+      - R/oop_in_r/s3.md
+      - R/oop_in_r/s4.md
   - SQL: sql.md
   - Git:
     - git/git_overview.md
