@@ -1,3 +1,8 @@
+### Select columns by column names
+```py title='Select columns by pattern'
+df.filter(regex='name|address|date*')
+```
+
 ### Filter by value
 
 ```py
