@@ -33,7 +33,9 @@ nav:
     - Automation:
       - R/automation/r_automation.md
     - Officer:
-      - R/officer/r_officer.md
+      - R/officer/build_word.md
+      - R/officer/build_excel.md
+      - R/officer/build_ppt.md
     - Shiny:
       - R/shiny/r_shiny.md
     - OOP in R:
