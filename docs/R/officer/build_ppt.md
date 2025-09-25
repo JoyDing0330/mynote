@@ -14,6 +14,7 @@ doc <- read_pptx()
 ```r
 doc <- read_pptx(path = here("template.pptx"))
 ```
+
 ## Add slide
 ```r
 doc <- add_slide(
