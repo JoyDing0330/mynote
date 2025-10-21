@@ -32,6 +32,8 @@ nav:
       - R/data_analysis/r_data_analysis.md
     - Automation:
       - R/automation/r_automation.md
+    - Plotting:
+      - R/plotting/legendry.md
     - Officer:
       - R/officer/build_word.md
       - R/officer/build_excel.md
